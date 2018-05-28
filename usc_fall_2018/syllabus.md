@@ -16,6 +16,7 @@ This course will examine 1-2 databases from each of the four main NoSQL data mod
 1. [MongoDB adds ACID Compliance](https://www.mongodb.com/press/mongodb-announces-multi-document-acid-transactions-in-release-40) and the annoucement itself [here](https://www.mongodb.com/presentations/mongodblocal-seattle-transactions-announcement)
 2. MongoDB Analytic testing tool [here](https://www.knowi.com/mongodb-analytics)
 3. MongoDB and Other NoSQL databases comparison [here](https://db-engines.com/en/system/Cassandra%3BMongoDB%3BNeo4j%3BRedis) 
+4. NoSQL in Big Data taking over [report here](https://reprints.forrester.com/?utm_campaign=Int_OC_Forrester%20NoSQL%20Report_07_16_WW_Autoresponder&utm_medium=email&utm_source=Eloqua#/assets/2/361/'RES125643'/reports)
 
 
 
