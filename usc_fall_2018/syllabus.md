@@ -12,6 +12,10 @@ This course will examine 1-2 databases from each of the four main NoSQL data mod
 1. [BigTable NoSQL DB](http://www.eecs.harvard.edu/~margo/cs165/papers/bigtable-osdi06.pdf)
 2. [DynamoDB](http://www.eecs.harvard.edu/~margo/cs165/papers/amazon-dynamo-sosp2007.pdf)
 
+### Other
+1. [MongoDB adds ACID Compliance](https://www.mongodb.com/press/mongodb-announces-multi-document-acid-transactions-in-release-40) and the annoucement itself [here](https://www.mongodb.com/presentations/mongodblocal-seattle-transactions-announcement)
+
+
 
 ## Schedule   
 
