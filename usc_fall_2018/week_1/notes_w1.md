@@ -24,8 +24,8 @@
 ## Explore the data
 #### Answer the following questions:
 * Which employee has the greatest number of years at the company?
-* Sort and only show the employees by Education and and MonthlyIncome. 
-* 
+* Sort and `only` show the employees by Education and and MonthlyIncome. 
+* Sort and `only` show all employees where the monthly income is at least 10000 and the performance rating is no greater than 3
 #### Tips:
 * Use mongoimport & see --help if needed :)
 * Specify database as `hr_data` and the collection as `hr`
