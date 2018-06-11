@@ -10,7 +10,7 @@
 
 # Step 1:<br>
 
-## Import csv on HR data
+#### Import csv on HR data
 
 #### Tips:
 * Use mongoimport & see --help if needed :)
@@ -21,7 +21,7 @@
 <br><br>
 # Step 2:<br>
 
-## Explore the data
+#### Explore the data
 #### Answer the following questions:
 * Which employee has the greatest number of years at the company?
 * Order by and `only` show the employees by Education and and MonthlyIncome. `Note` -  order by both Education and MonthlyIncome.
@@ -32,7 +32,7 @@
 <br><br>
 # Step 3:<br>
 
-## Lets Relate it all!
+### Lets Relate it all!
 #### Answer the following questions:
 * Problems for population
 #### Tips:
