@@ -6,7 +6,7 @@ This course will examine 1-2 databases from each of the four main NoSQL data mod
 
 ### Textbooks
 1. [Seven Databases in Seven Weeks: A Guide to Modern Databases and the NoSQL Movement](https://www.amazon.com/Seven-Databases-Weeks-Modern-Movement/dp/1934356921)
-2. [NoSQL Distilled: A Brief Guide to the Emerging World of Polyglot Persistence](https://www.amazon.com/NoSQL-Distilled-Emerging-Polyglot-Persistence/dp/0321826620)
+2. [NoSQL for Mere Mortals](https://www.amazon.com/NoSQL-Mere-Mortals-Dan-Sullivan/dp/0134023218)
 
 ### Readings
 1. [BigTable NoSQL DB](http://www.eecs.harvard.edu/~margo/cs165/papers/bigtable-osdi06.pdf)
