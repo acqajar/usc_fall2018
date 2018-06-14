@@ -24,14 +24,15 @@ This course will examine 1-2 databases from each of the four main NoSQL data mod
 
 ## Schedule   
 
-|Schedule | Lecture/lab  |   
-| --- | --- |
-| Week 1     | MongoDB basics        
-| Week 2     | MongoDB Aggregate Pipeline + Graph      
-| Week 3     | Pymongo, Python and MongoDB        
-| Week 4     | Hbase     
-| Week 5     | GraphDB - OrientDB       
-| Week 6     | Cassandra             
-| Week 7     | Redis        
+|Schedule | Lecture/lab  |  Assignment  |    
+| --- | --- |--- |
+| Week 1     | MongoDB basics   | HW 1     
+| Week 2     | MongoDB Aggregate Pipeline + Graph | HW 2     
+| Week 2.5     | MongoDB + Spark   | HW 3     
+| Week 3     | Pymongo, Python and MongoDB   | HW 4     
+| Week 4     | Hbase   | Start Final Project Planning  
+| Week 5     | GraphDB - OrientDB   | HW 5   
+| Week 6     | Cassandra     | HW 6        
+| Week 7     | Redis        | -----
 | Week 8     | Final Project
 

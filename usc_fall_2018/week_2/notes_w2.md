@@ -49,12 +49,9 @@ db.collection.find( { key: { $gt: 'value' } } )
 ```
 ##### See here https://docs.mongodb.com/manual/reference/operator/query-comparison/ for more comparison operators
 
-However, in doing you analysis, you might only want to project some fields. This is important for many reasons, but one of them is speed! In other words, return only the fields you need (think of this as the SELECT statement in SQL) instead of some big, unwieldy document from the collection.
+However, in doing you analysis, you might only want to project or return relevant fields. This is important for many reasons, but one of them is speed! In other words, return only the fields you need (think of this as the SELECT statement in SQL) instead of some big, unwieldy document from the collection.
 
-**projection**. 
-
-You can do projection like below:
-
+### <strong>Projection </strong>
 ```js
 // simplest format of aggregation
 db.colleciton.find('<query_criteria>', '<projection_field>')

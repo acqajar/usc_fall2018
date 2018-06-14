@@ -3,13 +3,20 @@
 ### Objectives:
 * Organize csvs into NoSQL database structures
 * Basic MongoDB queries
+* Complex Queries
+    * Geospatial
+    * Text
+    * Embedded Objects and Arrays
+* [Query Optimization](https://docs.mongodb.com/manual/tutorial/analyze-query-plan/)
+    * analyzing query time
+    * managing/creating indexes ([here](https://docs.mongodb.com/manual/reference/method/db.collection.createIndex/))
 
 
 <br><br>
 
 # Step 1:<br>
 
-#### Import csv on HR data
+### <strong>Import csv on HR data </strong>
 
 #### Tips:
 * Use mongoimport & see --help if needed :)
@@ -20,7 +27,7 @@
 <br><br>
 # Step 2:<br>
 
-#### Explore the data
+### <strong>Explore the data</strong>: [Query the Database](https://docs.mongodb.com/manual/tutorial/query-documents/)
 #### Answer the following questions:
 * Which employee has the greatest number of years at the company?
 * Order by and `only` show the employees by Education and and MonthlyIncome. `Note` -  order by both Education and MonthlyIncome.
@@ -31,8 +38,9 @@
 <br><br>
 # Step 3:<br>
 
-### Lets Relate it all!
+### <strong>Lets Relate it all!</strong>
 #### Answer the following questions:
-* Problems for population/ aggregation pipeline ?
+* [Query Embedded document](https://docs.mongodb.com/manual/tutorial/query-embedded-documents/)
+* [Query Array](https://docs.mongodb.com/manual/tutorial/query-arrays/)
 #### Tips:
 * Tips for population
