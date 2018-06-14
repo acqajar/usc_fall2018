@@ -1,9 +1,8 @@
-# Week 1 
+# Mongodb Basics 
 
 ### Objectives:
-* Review/refresh SQL database structures
 * Organize csvs into NoSQL database structures
-* Join Tables
+* Basic MongoDB queries
 
 
 <br><br>
@@ -34,6 +33,6 @@
 
 ### Lets Relate it all!
 #### Answer the following questions:
-* Problems for population
+* Problems for population/ aggregation pipeline ?
 #### Tips:
 * Tips for population

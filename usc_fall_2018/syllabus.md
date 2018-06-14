@@ -26,12 +26,12 @@ This course will examine 1-2 databases from each of the four main NoSQL data mod
 
 |Schedule | Lecture/lab  |   
 | --- | --- |
-| Week 1     | Relational vs NonRelational Databases      
-| Week 2     | Graph Database - *Neo4j*         
-| Week 3     | Key-value - *Redis*         
-| Week 4     | Column-family - *Cassandra*     
-| Week 5     | Document Store -  *MongoDB*         
-| Week 6     | Pymongo, Python and MongoDB              
-| Week 7     | NLP, Python, MongoDB          
-| Week 8     | Final
+| Week 1     | MongoDB basics        
+| Week 2     | MongoDB Aggregate Pipeline + Graph      
+| Week 3     | Pymongo, Python and MongoDB        
+| Week 4     | Hbase     
+| Week 5     | GraphDB - OrientDB       
+| Week 6     | Cassandra             
+| Week 7     | Redis        
+| Week 8     | Final Project
 
