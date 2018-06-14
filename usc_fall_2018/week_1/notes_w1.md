@@ -8,8 +8,8 @@
     * Text
     * Embedded Objects and Arrays
 * [Query Optimization](https://docs.mongodb.com/manual/tutorial/analyze-query-plan/)
-    * analyzing query time
-    * managing/creating indexes ([here](https://docs.mongodb.com/manual/reference/method/db.collection.createIndex/))
+    * Analyzing query time
+    * Managing/creating indexes ([here](https://docs.mongodb.com/manual/indexes/))
 
 
 <br><br>
