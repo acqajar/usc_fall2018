@@ -90,7 +90,7 @@ documentation](https://docs.mongodb.com/v3.0/reference/operator/aggregation/)
 
 So now that you have seen some of the functions that MongoDB does, lets review a few steps of the pipeline (or stages) with this graphic:
 
-![aggregation pipeline](./agg.png)
+![aggregation pipeline](../img/agg.png)
 
 
 Above is a simple example of how we can use the aggregate pipeline to using the $match and $group pipelines.
