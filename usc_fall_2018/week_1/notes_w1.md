@@ -16,7 +16,13 @@
 <a id="upload"></a>
 # Step 1: Upload csv into MongoDB <br>
 
-### <strong>Import csv on HR data </strong>
+### Concepts:
+* Import csv into local instance of Mongodb. *Note* .json format ingestion will be similar
+* Examine other formats of file types being ingested
+
+### Unit questions:
+* Create local mongodb instance
+* Ingest csv into Mongodn
 
 #### Tips:
 * Use mongoimport & see --help if needed :)
@@ -28,11 +34,11 @@
 <a id="basic"></a>
 # Step 2: Basic Queries<br>
 
-#### Concepts
+### Concepts 
 * Project, find, and, or, limit, where, sort, in, match, greater than
 
 
-#### Unit Questions - using previously uploaded csv:
+### Unit Questions - using previously uploaded csv:
 * Which employee has the greatest number of years at the company?
 * Order by and `only` show the employees by Education and and MonthlyIncome. `Note` -  order by both Education and MonthlyIncome.
 * Order by and `only` show all employees where the monthly income is at least 10000 and the performance rating is no greater than 3
@@ -45,13 +51,13 @@
 
 # Step 3: Complex Queries
 
-#### Concepts:
+### Concepts:
 * [Query Embedded document](https://docs.mongodb.com/manual/tutorial/query-embedded-documents/)
 * [Query Array](https://docs.mongodb.com/manual/tutorial/query-arrays/)
 * Geospatial
 * Text
 
-#### Unit Questions:
+### Unit Questions:
 * Questions 
 #### Tips:
 
