@@ -1,20 +1,20 @@
 # Mongodb Basics 
 
 ### Objectives:
-* Upload csvs/json into NoSQL database (MongoDB)
-* Basic MongoDB queries
-* Complex Queries
+* [Upload csvs/json into NoSQL database (MongoDB)](#upload)
+* [Basic MongoDB queries](#basic)
+* [Complex Queries](#complex)
     * Geospatial ([here](https://docs.mongodb.com/manual/geospatial-queries/)) use USC database, cities collection
     * Text ([here](https://docs.mongodb.com/manual/text-search/))
     * Embedded Objects and Arrays
-* [Query Optimization](https://docs.mongodb.com/manual/tutorial/analyze-query-plan/)
+* [Query Optimization](#optimize)
     * Analyzing query time
     * Managing/creating indexes ([here](https://docs.mongodb.com/manual/indexes/))
 
-
+<!-- https://docs.mongodb.com/manual/tutorial/analyze-query-plan/ -->
 <br><br>
-
-# Step 1: Upload csv into MongoDB<br>
+<a id="upload"></a>
+# Step 1: Upload csv into MongoDB <br>
 
 ### <strong>Import csv on HR data </strong>
 
@@ -25,6 +25,7 @@
 
 
 <br><br>
+<a id="basic"></a>
 # Step 2: Basic Queries<br>
 
 #### Concepts
@@ -40,6 +41,8 @@
 * Everything is object based in the query - even the functions that you intend to apply to the data. Therefore, as you think about constructing your query, think carefully about the order of operations i.e. given a column and/or field in a document, apply this function.
 <br><br>
 
+<a id="complex"></a> 
+
 # Step 3: Complex Queries
 
 #### Concepts:
@@ -53,6 +56,7 @@
 #### Tips:
 
 
+<a id="optimize"></a>
 
 # Step 4: Query Optimization<br>
 
