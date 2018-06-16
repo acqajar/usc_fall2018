@@ -33,20 +33,23 @@ First, in case you didn't, navigate to this link [here](https://www.tutorialspoi
 > <strong> `Key Feature`: </strong>
 > <br> <strong>$ mongoimport</strong> is a utility used to easily and simply import files into MongoDB. Here we will only concern ourselves with the .json and .csv file formats
 
-Execute the following commands to import the .csv and .json files respectively.
+Execute the following commands to import the .csv and .json files respectively. `Note` - the 2 .json file types should exist in the same database (--db).
  ```js
 // To import .csv files
-mongoimport --db [database_name] --collection [collection_name] --file [file_name] --headerline --type=cs[file_type] 
+mongoimport --db [database_name] --collection [collection_name] --file [file_name] --headerline --type=[file_type] 
 
 // To import .json files
-mongoimport --jsonArray --db [database_name] --collection laur[collection_nam] --file [file_name]
-
+mongoimport --jsonArray --db [database_name] --collection [collection_nam] --file [file_name]
 ```
+#### Question - Using what you have above, how would you import the .csv and .json files?
 
-#### Tips:
-* Use mongoimport & see --help if needed :)
-* Specify database as `hr_data` and the collection as `hr`
-* Mongoimport is a powerful tool, and can quickly digest any file type. The file types most pertinent to this course are `.json` and `.csv` 
+3. Once you have successfully imported these files into you database 
+
+
+> #### Tips:
+>* Use mongoimport & see --help if needed :)
+>* Mongoimport is a powerful tool, and can quickly digest any file type. The file types most pertinent to this course are `.json` and `.csv` 
+>* To learn more, visit this [link](https://docs.mongodb.com/manual/reference/program/mongoimport/).
 
 
 <br><br>
