@@ -5,7 +5,7 @@
 * [What are Aggregations?](#aggregation)
     * [MongoDB refresher](#refresh)
     * [SQL to Aggregation Pipeline Map](#map)
-* [Practice](#prep)
+* [Aggregation Pipeline](#prep)
 
 
 <br><br>
@@ -131,7 +131,7 @@ Now that we have some context for this the database, lets tackle some questions 
 <br>
 <a id="prep"></a>
 
-# Step 3: Practice
+# Step 3: Aggregation Pipeline
 
 #### `1. How many total users are there? Only return the total.`
 
