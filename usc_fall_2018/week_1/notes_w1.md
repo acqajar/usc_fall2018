@@ -11,14 +11,20 @@
     * Analyzing query time
     * Managing/creating indexes ([here](https://docs.mongodb.com/manual/indexes/))
 
+<br>
+
+`Note:`
+
+>For today's lesson, we will be using a web version of MongoDB which you can find [here](https://www.tutorialspoint.com/mongodb_terminal_online.php). For future classes, you will should have MongoDB (and other NoSQL db we will use) already installed. Thank you :).
 <!-- https://docs.mongodb.com/manual/tutorial/analyze-query-plan/ -->
 <br><br>
 <a id="upload"></a>
-# Step 1: Upload csv into MongoDB <br>
+# Step 1: Upload files into MongoDB <br>
 
 ### Concepts:
-* Import csv into local instance of Mongodb. *Note* .json format ingestion will be similar
-* Examine other formats of file types being ingested
+* Get started on web MongoDB instance
+* Import json/csv into Mongodb
+* Navigating Mongo shell
 
 ### Unit questions:
 * Create local mongodb instance
