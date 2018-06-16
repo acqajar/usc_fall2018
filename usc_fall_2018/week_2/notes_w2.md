@@ -1,25 +1,30 @@
 # MongoDB Aggregation
 
-### Objectives:
-* Review Mongodb Basics
-* Become familiar with Aggregation Pipeline
+### Overview:
+* [Review MongoDB Basics](#brief)
+* [What are Aggregations?](#aggregation)
+    * [MongoDB refresher](#refresh)
+    * [SQL to Aggregation Pipeline Map](#map)
+* [Practice](#prep)
 
 
 <br><br>
+<a id="brief"></a>
 
-# Step 1:<br>
-Recently, we learned how to do CRUD(Create, Read, Update & Delete) operations in MongoDB. This is of course very important to doing the basics of NoSQL in MongoDB. That being said, there are more significant things that MongoDB can do, especially in the realm of business analytics. And after all, this is a business analytics class :).
-
-
-The Aggregation Pipeline is interesting from a data scientist's point of view because it opens up the possibility to simplify big data into metrics. These metrics allow us to understand, at a deep level, different business activities and uncover relationships that can transfer to business actions. 
-
-All in all, we will be learning how to do data aggregation vai the Aggregation Pipeline and report a metric from MongoDB. 
-
-Today we will be dealing with two different datasets. This data set is near and dear to my hear, it's a partial data set from my company, JoinIN - a SAAS product for universities to facilitate collaboration between students focused on entrepreneurship. 
+# Step 1: Brief <br>
+Recently, we reviewed some high level querying basics in MongoDB. This is essential not only toward building your NoSQL querying lexicon but also to understand how MongoDB is organized. That being said, there are more significant things that MongoDB can do, especially in the realm of business analytics. And after all, this is a business analytics class :).
 
 
-### What are aggregations?
+The Aggregation Pipeline is interesting from a data scientist's point of view because it opens up the possibility to simplify big data into key metrics. These metrics allow us to understand, at a deep level, different business activities and uncover relationships that can lead to business actions. 
 
+All in all, we will be learning how to do data aggregation via the Aggregation Pipeline and report a metric on MongoDB. 
+
+Today we will be dealing with two different datasets. This data set is near and dear to my heart, it's a partial data set from my company, JoinIN - a SAAS product for universities to facilitate collaboration between students focused on entrepreneurship. 
+
+<br>
+<a id="aggregation"></a>
+
+# Step 2: What are aggregations?
 From the MongoDB documentation:
 
 > Aggregations operations process data records and return computed results.
@@ -31,9 +36,11 @@ In short, aggregations operations allow developers to look at the massive data
 in a simpler way. For example, in the JoinIN dataset, if I wanted to know how many students there are per major, aggregation pipeline would be the way to go! Aggregations allow developers to look at the data from
 different angles.
 
+<br>
 
+<a id="refresh"></a>
 ## Quick MongoDB Refresher 
----
+
 Remember that you can do READ operation like below:
 
 ```js
@@ -65,7 +72,8 @@ You can find out more about MongoDB query in [this API
 documentation](https://docs.mongodb.com/manual/reference/operator/query/) and on [projection here](https://docs.mongodb.com/manual/tutorial/project-fields-from-query-results/) 
 
 
----
+<br>
+<a id="map"></a>
 
 ## Aggregation Pipeline Mapping to SQL functions 
 
@@ -120,8 +128,10 @@ Here's a list of the collections :
 
 
 Now that we have some context for this the database, lets tackle some questions regarding the data.
+<br>
+<a id="prep"></a>
 
-#### Questions
+# Step 3: Practice
 
 #### `1. How many total users are there? Only return the total.`
 

@@ -1,6 +1,6 @@
 # Mongodb Basics 
 
-### Objectives:
+### Overview:
 * [Upload csvs/json into NoSQL database (MongoDB)](#upload)
 * [Basic MongoDB queries](#basic)
 * [Complex Queries](#complex)
