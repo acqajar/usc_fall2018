@@ -26,9 +26,22 @@
 * Import json/csv into Mongodb
 * Navigating Mongo shell
 
-### Unit questions:
-* Create local mongodb instance
-* Ingest csv into Mongodn
+
+First, in case you didn't, navigate to this link [here](https://www.tutorialspoint.com/mongodb_terminal_online.php). Here, we want to upload two different file types. The two files to upload are in the `data` folder which is inside the `week_1` folder. 
+1. Upload those files to the online MongoDB instance by clicking on the left hand sidebar then right clicking on "root" folder and selecting upload.
+2. Once uploaded, we now have to import those file types into MongoDB. To import these files we will use <strong> mongoimport </strong>.
+> <strong> `Key Feature`: </strong>
+> <br> <strong>$ mongoimport</strong> is a utility used to easily and simply import files into MongoDB. Here we will only concern ourselves with the .json and .csv file formats
+
+Execute the following commands to import the .csv and .json files respectively.
+ ```js
+// To import .csv files
+mongoimport --db [database_name] --collection [collection_name] --file [file_name] --headerline --type=cs[file_type] 
+
+// To import .json files
+mongoimport --jsonArray --db [database_name] --collection laur[collection_nam] --file [file_name]
+
+```
 
 #### Tips:
 * Use mongoimport & see --help if needed :)
