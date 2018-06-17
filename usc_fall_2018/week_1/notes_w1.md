@@ -151,9 +151,9 @@ Using what you have above, how would you construct this query using these compar
 <br>
 <br>
 
->#### Tips:
->* There are two ways of accomplishing this task: the hard way and the easy way. The <strong>hard</strong> way is to think about looping through the data to find the largest number. The <strong>easy</strong> way is to manipulate the way the data is displayed and/or returned from querying the collection.
->* Everything is object based in the query - even the functions that you intend to apply to the data. Therefore, as you think about constructing your query, think carefully about the order of operations i.e. given a column and/or field in a document, apply this function.
+>#### <strong>`Tips`</strong>:
+>* Sort method has a 32mb size limitation on the resulting set being sorted. So, in larger collections, you may have to think about creating an [`index`](#index) to limit the number of documents MongoDB must scan. More on indexes later :). 
+
 <br><br>
 
 <a id="complex"></a> 
