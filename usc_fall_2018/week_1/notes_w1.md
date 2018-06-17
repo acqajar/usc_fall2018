@@ -33,7 +33,7 @@ First, in case you didn't, navigate to this link [here](https://www.tutorialspoi
 > <strong> `Key Feature`: </strong>
 > <br> <strong>$ mongoimport</strong> is a utility used to easily and simply import files into MongoDB. Here we will only concern ourselves with the .json and .csv file formats
 
-Execute the following commands to import the .csv and .json files respectively. `Note` - the 2 .json file types should exist in the same database (--db).
+Execute the following commands to import the .csv and .json files respectively. `Note` - the 2 .json file types should exist in the same database (--db) because these two files are related. `All collections` (aka tables in SQL databases) should have different names.
  ```js
 // To import .csv files
 mongoimport --db [database_name] --collection [collection_name] --file [file_name] --headerline --type=[file_type] 
@@ -43,8 +43,24 @@ mongoimport --jsonArray --db [database_name] --collection [collection_nam] --fil
 ```
 #### Question - Using what you have above, how would you import the .csv and .json files?
 
-3. Once you have successfully imported these files into you database 
+3. Once you have successfully imported these files into you database, you can start your mongo shell running the following command `mongo`.
+4. You have initiated your mongo shell, but you still have to navigate to your database you created in the above commands. 
+ ```js
+// Check all databases
+show databases
 
+// Navigate to a database
+use database_name
+
+// See collections (or tables in SQL)
+show collections
+```
+This should return a list of all the collections you just created. Please first navigate to the database with the HR data. <br>
+
+For clarity, the database with HR data, will be referred to as `hr_db` and its collection as `hr_c` and the other database as `nobel` and the collections as `laureates` and `country`.
+<br>
+
+Starting the next section, we will begin with the `hr_db`.
 
 > #### Tips:
 >* Use mongoimport & see --help if needed :)
