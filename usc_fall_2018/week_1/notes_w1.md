@@ -90,7 +90,14 @@ To do so, lets dive a bit deeper into how MongoDB is organized (we will explore 
 
 Now that you have some understanding of the document structure, <strong>what does the `years at the company` represent with respect to a document? </strong>
 
+The basic construct of a query in MongoDB looks like this:
+> `db.collection_name.find()`
 
+This returns a list of documents from said collection. For this question, you will need a few method. 
+> `$sort method` <br>
+To execute this method, you must pass the sort method a key-value pair for it to sort on. To sort by ascending, the value of the key is 1, whereas to sort by descending the key is -1. In short, the general structure is `query.sort({ key: <strong>value</strong> })`
+
+#### How would you write this query?
 
 ### 2. Order by and `only` show the employees by Education and and MonthlyIncome. `Note` -  order by both Education and MonthlyIncome.
 
