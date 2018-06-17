@@ -30,7 +30,7 @@
 First, in case you didn't, navigate to this link [here](https://www.tutorialspoint.com/mongodb_terminal_online.php). Here, we want to upload two different file types. The two files to upload are in the `data` folder which is inside the `week_1` folder. 
 1. Upload those files to the online MongoDB instance by clicking on the left hand sidebar then right clicking on "root" folder and selecting upload.
 2. Once uploaded, we now have to import those file types into MongoDB. To import these files we will use <strong> mongoimport </strong>.
-> <strong> `Key Feature`: </strong>
+> <strong> `Key Takeaway` </strong>
 > <br> <strong>$ mongoimport</strong> is a utility used to easily and simply import files into MongoDB. Here we will only concern ourselves with the .json and .csv file formats
 
 Execute the following commands to import the .csv and .json files respectively. `Note` - the 2 .json file types should exist in the same database (--db) because these two files are related. `All collections` (aka tables in SQL databases) should have different names.
@@ -75,12 +75,28 @@ Starting the next section, we will begin with the `hr_db`.
 ### Concepts 
 * Learn basic MongoDB query methods:
     *  Project, find, and, or, limit, where, sort, in, match, greater than
+* Do some exploratory queries
 
 
-### Unit Questions - using previously uploaded csv:
-* Which employee has the greatest number of years at the company?
-* Order by and `only` show the employees by Education and and MonthlyIncome. `Note` -  order by both Education and MonthlyIncome.
-* Order by and `only` show all employees where the monthly income is at least 10000 and the performance rating is no greater than 3
+### 1. Which Employee has the greatest number of years at the company? 
+>One way to address this question is to break it down into its substantive parts. The two main aspects are `greatest` and `years at the company`. 
+
+Great, now that we have that background, lets attempt to solve this problem in MongoDB.
+
+To do so, lets dive a bit deeper into how MongoDB is organized (we will explore this further in the reading/homework :)). In short, MongoDB is a document-oriented database. In other words, every input inside a collection (or table in a SQL db) is what is referred to as a `document` (or a row, in SQL). Moreover, documents can have `subdocuments` (or a join in SQL) which contain related data to the document as an array of some sort of values - but more on this later. 
+
+> <strong>`Key Takeaway` </strong><br>
+> Documents are amazing (clearly my unbiased opinion;) ). The key here is that all documents are a set of key-value pairs, where keys are represented as strings, and values are any basic data types such as numbers, strings, Booleans or data structures such as arrays or objects.
+
+Now that you have some understanding of the document structure, <strong>what does the `years at the company` represent with respect to a document? </strong>
+
+
+
+### 2. Order by and `only` show the employees by Education and and MonthlyIncome. `Note` -  order by both Education and MonthlyIncome.
+
+### 3. Order by and `only` show all employees where the monthly income is at least 10000 and the performance rating is no greater than 3
+
+
 #### Tips:
 * There are two ways of accomplishing this task: the hard way and the easy way. The <strong>hard</strong> way is to think about looping through the data to find the largest number. The <strong>easy</strong> way is to manipulate the way the data is displayed and/or returned from querying the collection.
 * Everything is object based in the query - even the functions that you intend to apply to the data. Therefore, as you think about constructing your query, think carefully about the order of operations i.e. given a column and/or field in a document, apply this function.
