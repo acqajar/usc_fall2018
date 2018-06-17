@@ -73,7 +73,8 @@ Starting the next section, we will begin with the `hr_db`.
 # Step 2: Basic Queries<br>
 
 ### Concepts 
-* Project, find, and, or, limit, where, sort, in, match, greater than
+* Learn basic MongoDB query methods:
+    *  Project, find, and, or, limit, where, sort, in, match, greater than
 
 
 ### Unit Questions - using previously uploaded csv:
