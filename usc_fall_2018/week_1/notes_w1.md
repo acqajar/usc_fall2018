@@ -74,7 +74,7 @@ Starting the next section, we will begin with the `hr_db`.
 
 ### Concepts 
 * Learn basic MongoDB query methods:
-    *  Project, find, and, or, limit, where, sort, in, match, greater than
+    *  Projection, find, limit, where, sort, greater than/less than
 * Do some exploratory queries
 
 
@@ -95,11 +95,35 @@ The basic construct of a query in MongoDB looks like this:
 
 This returns a list of documents from said collection. For this question, you will need a few method. 
 > `$sort method` <br>
-To execute this method, you must pass the sort method a key-value pair for it to sort on. To sort by ascending, the value of the key is 1, whereas to sort by descending the key is -1. In short, the general structure is `query.sort({ key: <strong>value</strong> })`
+To execute this method, you must pass the sort method a key-value pair for it to sort on. To sort by ascending, the value of the key is 1, whereas to sort by descending the key is -1. In short, the general structure is <br>`query.sort({ key: value })`
 
-#### How would you write this query?
+#### Q: How would you write this query?
 
-### 2. Order by and `only` show the employees by Education and and MonthlyIncome. `Note` -  order by both Education and MonthlyIncome.
+
+<!-- > db.hr.find().sort({ YearsAtCompany:-1 }).limit(1) -->
+
+<br>
+
+### 2. Order by and `only` return the employees by Education and and MonthlyIncome. Order by both Education and MonthlyIncome.
+
+Here you have two key methods you have to consider in constructing your query.
+#### What are they?
+<!-- 
+* Order by = `sort`
+* Only = ?
+ -->
+
+An important feature of this question is about selecting `only` the fields you want to return. To select only the fields you want to return in MongoDB, you specficy it within the query.
+> `db.find( { }, { k1:v1, k2:v2, etc })`
+
+Where k1 and k2 are keys and v1 and v2 are values. Here, again take notice of how we query the structure of the document database. In MongoDB, this kind of selecting of fields to return is called <strong> projection </strong>.  
+<br><strong> How does this query look like?</strong>    
+
+<!-- 
+db.hr.find({},{_id:0, Education:1, MonthlyIncome:1}).sort({Education:1, MonthlyIncome:1})    
+-->
+<br>
+<br>
 
 ### 3. Order by and `only` show all employees where the monthly income is at least 10000 and the performance rating is no greater than 3
 
