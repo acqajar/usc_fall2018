@@ -43,6 +43,13 @@ mongoimport --jsonArray --db [database_name] --collection [collection_nam] --fil
 ```
 #### Question - Using what you have above, how would you import the .csv and .json files?
 
+<!-- mongoimport --jsonArray --db nobel --collection laureate --file laureates.json
+
+mongoimport --jsonArray --db nobel --collection country --file country.json
+
+mongoimport --db hr --collection sample --file sample_hr.csv --headerline --type=csv
+ -->
+
 3. Once you have successfully imported these files into you database, you can start your mongo shell running the following command `mongo`.
 4. You have initiated your mongo shell, but you still have to navigate to your database you created in the above commands. 
  ```js
@@ -117,7 +124,7 @@ An important feature of this question is about selecting `only` the fields you w
 > `db.find( { }, { k1:v1, k2:v2, etc })`
 
 Where k1 and k2 are keys and v1 and v2 are values. Here, again take notice of how we query the structure of the document database. In MongoDB, this kind of selecting of fields to return is called <strong> projection </strong>.  
-<br><strong> How does this query look like?</strong>    
+<br><strong> Q: How does this query look like?</strong>    
 
 <!-- 
 db.hr.find({},{_id:0, Education:1, MonthlyIncome:1}).sort({Education:1, MonthlyIncome:1})    
@@ -127,10 +134,25 @@ db.hr.find({},{_id:0, Education:1, MonthlyIncome:1}).sort({Education:1, MonthlyI
 
 ### 3. Order by and `only` show all employees where the monthly income is at least 10000 and the performance rating is no greater than 3
 
+In this prompt, we have a whole new type of methods being subtly/implictly introduced. Specifically here:
+> `at least 10000 and [...] no greater than 3`
 
-#### Tips:
-* There are two ways of accomplishing this task: the hard way and the easy way. The <strong>hard</strong> way is to think about looping through the data to find the largest number. The <strong>easy</strong> way is to manipulate the way the data is displayed and/or returned from querying the collection.
-* Everything is object based in the query - even the functions that you intend to apply to the data. Therefore, as you think about constructing your query, think carefully about the order of operations i.e. given a column and/or field in a document, apply this function.
+
+### Comparison Operators
+
+![aggregation pipeline](../img/comparison.png)
+
+Above are a list of comparison operators. However, for the purpose of this question which are the most relevant to us?
+
+<!-- $gte and $lt -->
+
+As a result, which operators would you use, in which way, to construct the correct query for this question ? 
+<br>
+<br>
+
+>#### Tips:
+>* There are two ways of accomplishing this task: the hard way and the easy way. The <strong>hard</strong> way is to think about looping through the data to find the largest number. The <strong>easy</strong> way is to manipulate the way the data is displayed and/or returned from querying the collection.
+>* Everything is object based in the query - even the functions that you intend to apply to the data. Therefore, as you think about constructing your query, think carefully about the order of operations i.e. given a column and/or field in a document, apply this function.
 <br><br>
 
 <a id="complex"></a> 
