@@ -146,7 +146,8 @@ Above are a list of comparison operators. However, for the purpose of this quest
 
 <!-- $gte and $lt -->
 
-As a result, which operators would you use to construct the correct query for this question ? 
+Using what you have above, how would you construct this query using these comparison operators ?
+
 <br>
 <br>
 
