@@ -167,14 +167,18 @@ Given you now have all the tools necessary to construct this query, how would yo
 # Step 3: Complex Queries
 
 ### Concepts:
-* [Query Embedded document](https://docs.mongodb.com/manual/tutorial/query-embedded-documents/)
-* [Query Array](https://docs.mongodb.com/manual/tutorial/query-arrays/)
-* Geospatial
-* Text
+* [Query Embedded document](#embedded)
+* [Query Array](#array)
+* [Geospatial](#geo)
+* [Text](#texts)
 
 ### Unit Questions:
 * Questions 
-#### Tips:
+
+>#### <strong>`Tips`</strong>:
+>#### <strong>`References/Read More`</strong>:
+>* [Query Array](https://docs.mongodb.com/manual/tutorial/query-arrays/)
+>* [Query Embedded document](https://docs.mongodb.com/manual/tutorial/query-embedded-documents/)
 
 
 <a id="optimize"></a>
