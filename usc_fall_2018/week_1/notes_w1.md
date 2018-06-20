@@ -3,9 +3,10 @@
 ### Overview:
 * [Upload csvs/json into NoSQL database (MongoDB)](#upload)
 * [Basic MongoDB queries](#basic)
+    * [Comparison](#compare)
 * [Complex Queries](#complex)
-    * Geospatial ([here](https://docs.mongodb.com/manual/geospatial-queries/)) use USC database, cities collection
-    * Text ([here](https://docs.mongodb.com/manual/text-search/))
+    * Geospatial
+    * Text
     * Embedded Objects and Arrays
 * [Query Optimization](#optimize)
     * Analyzing query time
@@ -82,10 +83,13 @@ Starting the next section, we will begin with the `hr_db`.
 ### Concepts 
 * Learn basic MongoDB query methods:
     *  Projection, find, limit, where, sort, greater than/less than
-* Do some exploratory queries
+<!-- * Do some exploratory queries -->
 
 
-### 1. Which Employee has the greatest number of years at the company? 
+### SECTION 1: Greatest via Sorting
+
+So the question for this section is:  
+####  Which Employee has the greatest number of years at the company? 
 >One way to address this question is to break it down into its substantive parts. The two main aspects are `greatest` and `years at the company`. 
 
 Great, now that we have that background, lets attempt to solve this problem in MongoDB.
@@ -111,7 +115,8 @@ To execute this method, you must pass the sort method a key-value pair for it to
 
 <br>
 
-### 2. Order by and `only` return the employees by Education and and MonthlyIncome. Order by both Education and MonthlyIncome.
+### SECTION 2: Projecting/Selecting Relevant Fields/Data
+#### Order by and `only` return the employees by Education and and MonthlyIncome. Order by both Education and MonthlyIncome.
 
 Here you have two key methods you have to consider in constructing your query.
 #### What are they?
@@ -132,14 +137,17 @@ db.hr.find({},{_id:0, Education:1, MonthlyIncome:1}).sort({Education:1, MonthlyI
 <br>
 <br>
 
-### 3. Order by and `only` show all employees where the monthly income is at least 10000 and the job satisfaction is no greater than 3. Return the total number.
+### SECTION 3: Comparison Operators
+#### Order by and `only` show all employees where the monthly income is at least 10000 and the job satisfaction is no greater than 3. Return the total number.
 
 In this prompt, we have a whole new type of methods being subtly/implictly introduced. See here:
 > `at least 10000 and [...] no greater than 3`
 
 To address this phrase above, we will need to incoporate some comparison operators. See below for a list of them.
 
-### Comparison Operators
+<a id="compare"></a>
+
+#### --- Comparison Operators ---
 
 ![aggregation pipeline](../img/comparison.png)
 
@@ -167,13 +175,12 @@ Given you now have all the tools necessary to construct this query, how would yo
 # Step 3: Complex Queries
 
 ### Concepts:
-* [Query Embedded document](#embedded)
-* [Query Array](#array)
-* [Geospatial](#geo)
-* [Text](#texts)
+* [Query Embedded document & array](#embedded) 
+* [Geospatial Search](#geo)
+* [Text Search](#texts)
 
-### Unit Questions:
-* Questions 
+
+### SECTION 1: Query Embedded Document & Array
 
 >#### <strong>`Tips`</strong>:
 >#### <strong>`References/Read More`</strong>:
