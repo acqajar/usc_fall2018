@@ -132,21 +132,27 @@ db.hr.find({},{_id:0, Education:1, MonthlyIncome:1}).sort({Education:1, MonthlyI
 <br>
 <br>
 
-### 3. Order by and `only` show all employees where the monthly income is at least 10000 and the performance rating is no greater than 3
+### 3. Order by and `only` show all employees where the monthly income is at least 10000 and the job satisfaction is no greater than 3. Return the total number.
 
-In this prompt, we have a whole new type of methods being subtly/implictly introduced. Specifically here:
+In this prompt, we have a whole new type of methods being subtly/implictly introduced. See here:
 > `at least 10000 and [...] no greater than 3`
 
+To address this phrase above, we will need to incoporate some comparison operators. See below for a list of them.
 
 ### Comparison Operators
 
 ![aggregation pipeline](../img/comparison.png)
 
-Above are a list of comparison operators. However, for the purpose of this question which are the most relevant to us?
+Now that you have this list, the real question is, given this list, which comparison operator would you use to construct this query?
 
-<!-- $gte and $lt -->
+The second part of this query is returning the `total number` of items that fit this query. See below:
+> db.query().`count()` <-- returns the count
 
-Using what you have above, how would you construct this query using these comparison operators ?
+Given you now have all the tools necessary to construct this query, how would you go about it?
+
+<!-- db.hr.find({ MonthlyIncome: { $gte: 10000}, JobSatisfaction: {$lte: 2} }).count() -->
+
+<!--  -->
 
 <br>
 <br>
