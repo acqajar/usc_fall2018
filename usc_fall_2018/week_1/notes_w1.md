@@ -89,8 +89,8 @@ Starting the next section, we will begin with the `hr_db`.
 ### SECTION 1: Greatest via Sorting
 
 So the question for this section is:  
-####  Which Employee has the greatest number of years at the company? 
->One way to address this question is to break it down into its substantive parts. The two main aspects are `greatest` and `years at the company`. 
+>####  Which Employee has the greatest number of years at the company? 
+One way to address this question is to break it down into its substantive parts. The two main aspects are `greatest` and `years at the company`. 
 
 Great, now that we have that background, lets attempt to solve this problem in MongoDB.
 
@@ -116,7 +116,7 @@ To execute this method, you must pass the sort method a key-value pair for it to
 <br>
 
 ### SECTION 2: Projecting/Selecting Relevant Fields/Data
-#### Order by and `only` return the employees by Education and and MonthlyIncome. Order by both Education and MonthlyIncome.
+>#### Order by and `only` return the employees by Education and and MonthlyIncome. Order by both Education and MonthlyIncome.
 
 Here you have two key methods you have to consider in constructing your query.
 #### What are they?
@@ -138,7 +138,7 @@ db.hr.find({},{_id:0, Education:1, MonthlyIncome:1}).sort({Education:1, MonthlyI
 <br>
 
 ### SECTION 3: Comparison Operators
-#### Order by and `only` show all employees where the monthly income is at least 10000 and the job satisfaction is no greater than 3. Return the total number.
+>#### Order by and `only` show all employees where the monthly income is at least 10000 and the job satisfaction is no greater than 3. Return the total number.
 
 In this prompt, we have a whole new type of methods being subtly/implictly introduced. See here:
 > `at least 10000 and [...] no greater than 3`
@@ -179,13 +179,31 @@ Given you now have all the tools necessary to construct this query, how would yo
 * [Geospatial Search](#geo)
 * [Text Search](#texts)
 
+>`Note: `<br>
+Using `Nobel` database for these problems. Please switch databases.
 
 ### SECTION 1: Query Embedded Document & Array
+
+To query an embedded document, the first step is to understand some basic about what an embedded document is. 
+
+At a high level, an embedded document is exaactly that - a document (which are what rows or inputs are called inside a collection i.e. model or table) embedded within another document. See the visual below:
+
+![embedded](../img/embedded.png)
+
+As you can see above, there is an overarching document with name `"Joe Bookreader"`. Within this document, in the addresses field, there is an array with two inputs. These are referred to as `"Embedded documents"`. This type of data modeling is known as `Embedded data modeling`. 
+
+>These schemas are generally known as `denormalized models` and main idea is to store related information in the same database record.
+
+Therefore, for cases like one to one or one to many relationships, NoSQL database architectures in MongoDB will often be designed in this style.
+
+Why?   
 
 >#### <strong>`Tips`</strong>:
 >#### <strong>`References/Read More`</strong>:
 >* [Query Array](https://docs.mongodb.com/manual/tutorial/query-arrays/)
 >* [Query Embedded document](https://docs.mongodb.com/manual/tutorial/query-embedded-documents/)
+>* More on [Embedded documents vs separate collections](http://openmymind.net/Multiple-Collections-Versus-Embedded-Documents/#1)
+
 
 
 <a id="optimize"></a>
