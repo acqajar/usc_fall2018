@@ -202,7 +202,7 @@ Therefore, for cases like one to one or one to many relationships, NoSQL databas
 <br>`Cons`:
 <br>* Embedded entities perform poorly with frequent updates 
 <br>* Embedded entities have size limits restricted by document size
-<br> * Can't handle Many-to-Many relationships efficiently
+<br> * Can't handle `Many-to-Many` relationships efficiently
 
 
  This stands at the opposite side of the spectrum to what is known as the `normalized model` of database architecture, which is commonly seen in SQL database architecture. See image below:
@@ -236,11 +236,21 @@ Therefore, for cases like one to one or one to many relationships, NoSQL databas
 * Your data is often excluded from your results
 * You want faster writes
 
+Part of the question here is an architectural decision. The question being:
+>#### <strong><p align="center">Which do you need more - `speed or consistency?` </p></strong>
+
+This statement might seem rhetorical, but from an architectural standpoint, it's an important  question. There are cases in which `denormalization` can lead to data inconsistency, while `normalization` can lead to greater query latency which in turn decreases the efficiency of the read operation.
+
+<!-- Another example of denormalization is used are Lucene and Solr, like MongoDB, they also adopted document model, actually it's very natural to use MongoDB as data storage and use Lucene or Solr as searching analyzing and index building for the data. -->
+
+Normalization makes your data compact, easy to store and easy to achieve consistency but with low query performance and hard to scale horizontally, denormalization provide high performance query but may cause data inconsistency.
+
 >#### <strong>`Tips`</strong>:
 >#### <strong>`References/Read More`</strong>:
 >* [Query Array](https://docs.mongodb.com/manual/tutorial/query-arrays/)
 >* [Query Embedded document](https://docs.mongodb.com/manual/tutorial/query-embedded-documents/)
 >* More on [Embedded documents vs separate collections](http://openmymind.net/Multiple-Collections-Versus-Embedded-Documents/#1)
+>* Tons of resources here: [Embed vs Ref](https://coderwall.com/p/px3c7g/mongodb-schema-design-embedded-vs-references), [Tips and Tricks](https://www.safaribooksonline.com/library/view/50-tips-and/9781449306779/ch01.html#tip_5), [MongoDB Schema Design Series Pt.1](https://www.mongodb.com/blog/post/6-rules-of-thumb-for-mongodb-schema-design-part-1)
 
 
 
