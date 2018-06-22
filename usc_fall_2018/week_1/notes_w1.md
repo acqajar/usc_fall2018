@@ -202,6 +202,7 @@ Therefore, for cases like one to one or one to many relationships, NoSQL databas
 <br>`Cons`:
 <br>* Embedded entities perform poorly with frequent updates 
 <br>* Embedded entities have size limits restricted by document size
+<br> * Can't handle Many-to-Many relationships efficiently
 
 
  This stands at the opposite side of the spectrum to what is known as the `normalized model` of database architecture, which is commonly seen in SQL database architecture. See image below:
