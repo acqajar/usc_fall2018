@@ -178,6 +178,7 @@ Given you now have all the tools necessary to construct this query, how would yo
 * [Query Embedded document & array](#embedded)
     * [What is an Embedded Document](#s1p1) 
     * [Querying Embedded Documents](#s1p2)
+    * [Querying Arrays](#s1p3)
 * [Geospatial Search](#geo)
 * [Text Search](#texts)
 
@@ -264,15 +265,25 @@ db.query({"`embedded_document.field`": value})
 
 Now that you have the basics of how to query an embedded document and some udnerstanding of what it is, try the following exercises. All of them are using the `nobel` database.
 
-#### How many nobel laureates have won it in the physics category?
+* #### How many nobel laureates have won it in the physics category? (ex.1)
 <!-- db.laureates.find({'prizes.category':"physics"}).count() -->
 
-#### How many nobel laureates have won it in the chemistry category after the year 1910? Sort by year descending.
+* #### How many nobel laureates have won it in the chemistry category after the year 1910? Sort by year descending.(ex.2)
 <!-- db.laureates.find({'prizes.category':"chemistry", 'prizes.year': {$gt:"1910"}}).sort({"prizes.year": -1}).limit(5) -->
 
 
-#### How many nobel laureates have won it in the physics category where the affiliation country is France?
+* #### How many nobel laureates have won it in the physics category where the affiliation country is France? (ex.3)
 <!-- db.laureates.find({'prizes.category':"chemistry", 'prizes.affiliations.country': "France" }).count() -->
+
+* #### List all the [`distinct`](https://docs.mongodb.com/manual/reference/method/db.collection.distinct/) affiliation countries are there for nobel prize winners? (ex.4)
+
+<!-- db.laureates.distinct('prizes.affiliations.country')  -->
+
+
+
+<a id="s1p2"></a>
+### Part 3 - Querying Arrays
+
 
 <br>
 <br>
