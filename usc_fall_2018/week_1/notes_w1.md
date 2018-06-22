@@ -264,8 +264,20 @@ db.query({"`embedded_document.field`": value})
 
 Now that you have the basics of how to query an embedded document and some udnerstanding of what it is, try the following exercises. All of them are using the `nobel` database.
 
+#### How many nobel laureates have won it in the physics category?
+<!-- db.laureates.find({'prizes.category':"physics"}).count() -->
+
+#### How many nobel laureates have won it in the chemistry category after the year 1910? Sort by year descending.
+<!-- db.laureates.find({'prizes.category':"chemistry", 'prizes.year': {$gt:"1910"}}).sort({"prizes.year": -1}).limit(5) -->
 
 
+#### How many nobel laureates have won it in the physics category where the affiliation country is France?
+<!-- db.laureates.find({'prizes.category':"chemistry", 'prizes.affiliations.country': "France" }).count() -->
+
+<br>
+<br>
+
+### See Below for more reading:
 >#### <strong>`Tips`</strong>:
 >#### <strong>`References/Read More`</strong>:
 >* [Query Array](https://docs.mongodb.com/manual/tutorial/query-arrays/)
