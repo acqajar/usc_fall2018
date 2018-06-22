@@ -194,9 +194,46 @@ As you can see above, there is an overarching document with name `"Joe Bookreade
 
 >These schemas are generally known as `denormalized models` and main idea is to store related information in the same database record.
 
-Therefore, for cases like one to one or one to many relationships, NoSQL database architectures in MongoDB will often be designed in this style.
+Therefore, for cases like one to one or one to many relationships, NoSQL database architectures in MongoDB will often be designed in this style. This rich, flexible architecture is "denormalized" to fit related data wherein inputs could be very different as well i.e. maybe not every address has the same information. But what is the real purpose of using this structure? Well -
 
-Why?   
+`Pros`:<br>*  Embedded documents provide much more efficent read operations
+<br>* More efficient to query/request/retrieve all related data in a SINGLE database operations 
+<br>* Good for modeling `1-to-1` or `1-to-Many` relationships
+<br>`Cons`:
+<br>* Embedded entities perform poorly with frequent updates 
+<br>* Embedded entities have size limits restricted by document size
+
+
+ This stands at the opposite side of the spectrum to what is known as the `normalized model` of database architecture, which is commonly seen in SQL database architecture. See image below:
+
+![normalized](../img/normalized.png)
+ 
+ As seen above, the normalized data model is just the opposite of the denormalized model. In short, this data model assigns references (foreign keys) to the User document in two separate documents within two separate collections, the Contact and Access collection respectively.
+
+`Pros`:<br>* Easier to represent complex many-to-many relationships
+<br>* Read and Write performance sufficiently faster 
+<br>* Documents have a size limit of 16MBs - so if your embedded document may continuously grow, better to make it a separate collection
+<br> *  Maintains integrity of data
+<br>`Cons`:
+<br>* A normalized structure as such (a flat structure) will tend to require multiple or more complex, time-consuming queries to resolve the references
+
+
+<strong> Embedding:</strong>
+* You have small subdocuments
+* Your data does not need to change regularly
+* You don’t need immediate consistency ( not up-to-date )
+* Your documents grow by a small amount
+* You need this data to perform a second query
+* You want faster reads
+<br/>
+
+<strong>Referencing:</strong>
+* You have large subdocuments
+* Your data changes frequently
+* You need your data to be up-to-date
+* Your documents grow by a large amount
+* Your data is often excluded from your results
+* You want faster writes
 
 >#### <strong>`Tips`</strong>:
 >#### <strong>`References/Read More`</strong>:
