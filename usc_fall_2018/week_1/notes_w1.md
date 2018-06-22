@@ -175,24 +175,29 @@ Given you now have all the tools necessary to construct this query, how would yo
 # Step 3: Complex Queries
 
 ### Concepts:
-* [Query Embedded document & array](#embedded) 
+* [Query Embedded document & array](#embedded)
+    * [What is an Embedded Document](#s1p1) 
+    * [Querying Embedded Documents](#s1p2)
 * [Geospatial Search](#geo)
 * [Text Search](#texts)
 
 >`Note: `<br>
 Using `Nobel` database for these problems. Please switch databases.
 
+<a id="embedded"></a>
 ### SECTION 1: Query Embedded Document & Array
 
 To query an embedded document, the first step is to understand some basic about what an embedded document is. 
 
-At a high level, an embedded document is exaactly that - a document (which are what rows or inputs are called inside a collection i.e. model or table) embedded within another document. See the visual below:
+<a id="s1p1"></a>
+### Part 1 - What is an Embedded Document?
+At a high level, an embedded document is exactly that - a document (which are what rows or inputs are called inside a collection i.e. model or table) embedded within another document. See the visual below:
 
 ![embedded](../img/embedded.png)
 
 As you can see above, there is an overarching document with name `"Joe Bookreader"`. Within this document, in the addresses field, there is an array with two inputs. These are referred to as `"Embedded documents"`. This type of data modeling is known as `Embedded data modeling`. 
 
->These schemas are generally known as `denormalized models` and main idea is to store related information in the same database record.
+>These schemas are generally known as `denormalized models` and main idea is to store related information in the same database record i.e. document.
 
 Therefore, for cases like one to one or one to many relationships, NoSQL database architectures in MongoDB will often be designed in this style. This rich, flexible architecture is "denormalized" to fit related data wherein inputs could be very different as well i.e. maybe not every address has the same information. But what is the real purpose of using this structure? Well -
 
@@ -244,6 +249,22 @@ This statement might seem rhetorical, but from an architectural standpoint, it's
 <!-- Another example of denormalization is used are Lucene and Solr, like MongoDB, they also adopted document model, actually it's very natural to use MongoDB as data storage and use Lucene or Solr as searching analyzing and index building for the data. -->
 
 Normalization makes your data compact, easy to store and easy to achieve consistency but with low query performance and hard to scale horizontally, denormalization provide high performance query but may cause data inconsistency.
+
+> <strong>Question</strong>:<br>
+> if you had to guess, what do you think a fast, efficient search index system like Solr or Lucerne do?  
+
+<a id="s1p2"></a>
+### Part 2 - Querying an Embedded Document
+
+To query this unique, denormalized data model, the basic syntax is as follows:
+
+```js
+db.query({"`embedded_document.field`": value})
+```
+
+Now that you have the basics of how to query an embedded document and some udnerstanding of what it is, try the following exercises. All of them are using the `nobel` database.
+
+
 
 >#### <strong>`Tips`</strong>:
 >#### <strong>`References/Read More`</strong>:
