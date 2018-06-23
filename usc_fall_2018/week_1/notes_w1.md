@@ -289,7 +289,7 @@ Now, with the `laureates` database, we will query arrays. If you are coming from
 <br>
 Before we begin, lets do a bit of discovery. 
 
-* <strong>How Many fields are there? Only return the the fields (not their values). </strong>(ex.1) 
+1 - <strong>How Many fields are there? Return a list of only the fields (not their values). </strong> 
 <br/> `Key` thing to remember here is that everything in MongoDB is a document, which is just an object. What's an object? Well, for simplicity, an object is just a container for properties which are just name - value pairs. In our `nobel` database, for example the `names` are on the left, and `values` on the right. See below:
 
 ![object](../img/object.png)
@@ -298,12 +298,13 @@ Before we begin, lets do a bit of discovery.
 <!-- Object.keys(db.nobel.findOne()).length, 
 Object.keys(db.nobel.findOne()) -->
 
-With this, can you return only the keys of a single document? 
+With this, can you return only the keys of a single document? There are several ways of doing this (as with everything, in code :) ). In short, here are the ways:
+* Query database for a document and manually count
+* Treat a document as an object and only grab its `keys` by using the Object.keys() method (this is the more readable way, if you were producing a report)
 
-* #### How Many distinct fields are there for the array field? What are they? (ex.2)
+1- <strong>How Many distinct fields are there for the array field? What are they? </strong> (ex.2)
 <!-- db.nobel.distinct("new_array").length, db.nobel.distinct("new_array") -->
-
-
+Using distinct, how would you return all the unique values for the array field? Which is the field that has an array of values?
 
 <br>
 
