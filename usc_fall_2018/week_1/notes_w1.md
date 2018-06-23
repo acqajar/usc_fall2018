@@ -287,16 +287,19 @@ Now that you have the basics of how to query an embedded document and some udner
 Now, with the `laureates` database, we will query arrays. If you are coming from a SQL/relational backgorund, this might seem unnatural, but lets try a few out. 
 <br>
 <br>
-Before we begin, lets do a bit of discovery. To solve the below, please check the following concepts: Object keys and values
+Before we begin, lets do a bit of discovery. 
 
-* <strong>How Many fields are there? </strong>(ex.1) 
+* <strong>How Many fields are there? Only return the the fields (not their values). </strong>(ex.1) 
 <br/> `Key` thing to remember here is that everything in MongoDB is a document, which is just an object. What's an object? Well, for simplicity, an object is just a container for properties which are just name - value pairs. In our `nobel` database, for example the `names` are on the left, and `values` on the right. See below:
 
-![normalized](../img/object.png)
+![object](../img/object.png)
 
 <strong> Can you pick out a name value pair? </strong>
 <!-- Object.keys(db.nobel.findOne()).length, 
 Object.keys(db.nobel.findOne()) -->
+
+With this, can you return only the keys of a single document? 
+
 * #### How Many distinct fields are there for the array field? What are they? (ex.2)
 <!-- db.nobel.distinct("new_array").length, db.nobel.distinct("new_array") -->
 
