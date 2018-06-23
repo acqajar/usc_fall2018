@@ -301,12 +301,48 @@ Object.keys(db.nobel.findOne()) -->
 With this, can you return only the keys of a single document? There are several ways of doing this (as with everything, in code :) ). In short, here are the ways:
 * Query database for a document and manually count
 * Treat a document as an object and only grab its `keys` by using the Object.keys() method (this is the more readable way, if you were producing a report)
+<br>
 
-1- <strong>How Many distinct fields are there for the array field? What are they? </strong> (ex.2)
+>`Note`:<br> Since not all documents in a collections have the same structure (MongoDB is schemaless), you cant find out all the field names for a collection, only a particular document. Therefore, the output will not be representative of what every document's structure is but will tend to give a general understanding of how the documents in a collection are structure
+<br>
+
+
+2 - <strong>How Many distinct fields are there for the array field? What are they? </strong> (ex.2)
 <!-- db.nobel.distinct("new_array").length, db.nobel.distinct("new_array") -->
 Using distinct, how would you return all the unique values for the array field? Which is the field that has an array of values?
 
 <br>
+
+3 - <strong> Querying Arrays </strong>
+<br> Now with better understanding of the collections and arrays, lets have a look at how to query array fields.
+
+In MongoDB, some use cases might include fields such as tags, years, colors, etc. Can you think of some?
+
+Several formats of querying an array: equality condition, at least one, and multiple criteria condition
+
+<strong>Part 1 - Equality </strong>:
+<br>There are two types of equality conditions. One where order is maintained and one where it is not. See below.
+
+```js
+// Order maintained
+db.query({"arrayField": [value1, value2]})
+
+// Order not maintained. Use $all operator.
+db.query({arrayField: { "$all": [value1, value2]} })
+```
+
+
+<strong>Part 2 - At Least One </strong>:
+<br>To specify equality condition on an array, use the following format.
+```js
+db.query({"arrayField": [value1, value2]})
+```
+
+
+Try this out with a couple of the distinct values you discovered. What do you notice about this equality condition?
+
+<!-- only finds exact -->
+<!-- db.nobel.find( { "new_array": ["crimson","kiwi"] } ) -->
 
 <a id="geo"></a>
 ### SECTION 2: Geospatial Search
