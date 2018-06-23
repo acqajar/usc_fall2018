@@ -334,23 +334,36 @@ db.query({arrayField: { "$all": [value1, value2]} })
 
 Try the problem below: <br>
 <br>
-<strong>How many documents contain the value `crimson`? How many have exactly `crimson` and `kiwi`? </strong> (ex.2)
-<!-- db.nobel.distinct("new_array").length, db.nobel.distinct("new_array") -->
-
-
-
-<br>
-<br><strong>Part 2 - At Least One </strong>:
-<br>To specify equality condition on an array, use the following format.
-```js
-db.query({"arrayField": [value1, value2]})
-```
-
-
-Try this out with a couple of the distinct values you discovered. What do you notice about this equality condition?
+<strong>How many documents contain the value `crimson`? How many have exactly `crimson` and `kiwi`? </strong>  
 
 <!-- only finds exact -->
-<!-- db.nobel.find( { "new_array": ["crimson","kiwi"] } ) -->
+<!-- db.nobel.find( { "new_array": {$all:["crimson"] } }),
+
+db.nobel.find( { "new_array": ["crimson","kiwi"] } ) 
+-->
+
+What differences do you notice? 
+
+
+<br><strong>Part 2 - At Least One </strong>:
+<br>To specify having only one of the values in the array, use the following format:
+```js
+db.query({"arrayField": value1 })
+```
+
+Now answer the following:
+
+<strong>How many documents contain the value `indigo`? How many have either `crimson` or `indigo`? </strong>  
+
+For the second question, you have to use the `$or` operator to combine the both options. The general implementation for `$or` is as follows:
+<br>
+```js
+db.query({"$or": [{option_1}, {option_2}, ... ])
+```
+<!-- db.nobel.find( { "new_array":"indigo" } ).count(),
+db.nobel.find({$or: [{ "new_array":"indigo" }, {new_array:"crimson"}]} ).count() -->
+
+How would you solve this?
 
 <a id="geo"></a>
 ### SECTION 2: Geospatial Search
