@@ -44,9 +44,9 @@ mongoimport --jsonArray --db [database_name] --collection [collection_nam] --fil
 ```
 #### Question - Using what you have above, how would you import the .csv and .json files?
 
-<!-- mongoimport --jsonArray --db nobel --collection laureate --file laureates.json
+<!-- mongoimport --jsonArray --db laureates --collection laureate --file laureates.json
 
-mongoimport --jsonArray --db nobel --collection country --file country.json
+mongoimport --jsonArray --db laureates --collection country --file country.json
 
 mongoimport --db hr --collection sample --file sample_hr.csv --headerline --type=csv
  -->
@@ -65,7 +65,7 @@ show collections
 ```
 This should return a list of all the collections you just created. Please first navigate to the database with the HR data. <br>
 
-For clarity, the database with HR data, will be referred to as `hr_db` and its collection as `hr_c` and the other database as `nobel` and the collections as `laureates` and `country`.
+For clarity, the database with HR data, will be referred to as `hr_db` and its collection as `hr_c` and the other database as `laureates` and the collections as `laureates` and `country`.
 <br>
 
 Starting the next section, we will begin with the `hr_db`.
@@ -183,7 +183,7 @@ Given you now have all the tools necessary to construct this query, how would yo
 * [Text Search](#texts)
 
 >`Note: `<br>
-Using `Nobel` database for these problems. Please switch databases.
+Using `laureates` database for these problems. Please switch databases.
 
 <a id="embedded"></a>
 ### SECTION 1: Query Embedded Document & Array
@@ -263,19 +263,19 @@ To query this unique, denormalized data model, the basic syntax is as follows:
 db.query({"`embedded_document.field`": value})
 ```
 
-Now that you have the basics of how to query an embedded document and some udnerstanding of what it is, try the following exercises. All of them are using the `nobel` database.
+Now that you have the basics of how to query an embedded document and some udnerstanding of what it is, try the following exercises. All of them are using the `laureates` database.
 
-* #### How many nobel laureates have won it in the physics category? (ex.1)
+* #### How many laureates laureates have won it in the physics category? (ex.1)
 <!-- db.laureates.find({'prizes.category':"physics"}).count() -->
 
-* #### How many nobel laureates have won it in the chemistry category after the year 1910? Sort by year descending.(ex.2)
+* #### How many laureates laureates have won it in the chemistry category after the year 1910? Sort by year descending.(ex.2)
 <!-- db.laureates.find({'prizes.category':"chemistry", 'prizes.year': {$gt:"1910"}}).sort({"prizes.year": -1}).limit(5) -->
 
 
-* #### How many nobel laureates have won it in the physics category where the affiliation country is France? (ex.3)
+* #### How many laureates laureates have won it in the physics category where the affiliation country is France? (ex.3)
 <!-- db.laureates.find({'prizes.category':"chemistry", 'prizes.affiliations.country': "France" }).count() -->
 
-* #### List all the [`distinct`](https://docs.mongodb.com/manual/reference/method/db.collection.distinct/) affiliation countries are there for nobel prize winners? (ex.4)
+* #### List all the [`distinct`](https://docs.mongodb.com/manual/reference/method/db.collection.distinct/) affiliation countries are there for laureates prize winners? (ex.4)
 
 <!-- db.laureates.distinct('prizes.affiliations.country')  -->
 
@@ -284,6 +284,7 @@ Now that you have the basics of how to query an embedded document and some udner
 <a id="s1p2"></a>
 ### Part 3 - Querying Arrays
 
+Now, with the `
 
 
 
