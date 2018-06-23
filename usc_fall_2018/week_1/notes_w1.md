@@ -285,6 +285,19 @@ Now that you have the basics of how to query an embedded document and some udner
 ### Part 3 - Querying Arrays
 
 
+
+
+<br>
+
+<a id="geo"></a>
+### SECTION 2: Geospatial Search
+
+<br>
+
+<a id="texts"></a>
+### SECTION 3: Text Search
+
+
 <br>
 <br>
 
