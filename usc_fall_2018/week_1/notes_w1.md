@@ -358,12 +358,17 @@ Now answer the following:
 For the second question, you have to use the `$or` operator to combine the both options. The general implementation for `$or` is as follows:
 <br>
 ```js
-db.query({"$or": [{option_1}, {option_2}, ... ])
+db.query({"$or": [{field:value}, {field:value}, ... ])
 ```
 <!-- db.nobel.find( { "new_array":"indigo" } ).count(),
 db.nobel.find({$or: [{ "new_array":"indigo" }, {new_array:"crimson"}]} ).count() -->
 
-How would you solve this?
+How would you solve this? Remember to use the or operator to include both conditions in your total count.
+
+<br>
+4 - <strong> Advanced Array Querying </strong>
+
+
 
 <a id="geo"></a>
 ### SECTION 2: Geospatial Search
