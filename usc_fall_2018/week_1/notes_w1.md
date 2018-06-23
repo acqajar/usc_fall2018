@@ -320,6 +320,7 @@ In MongoDB, some use cases might include fields such as tags, years, colors, etc
 
 Several formats of querying an array: equality condition, at least one, and multiple criteria condition
 
+
 <strong>Part 1 - Equality </strong>:
 <br>There are two types of equality conditions. One where order is maintained and one where it is not. See below.
 
@@ -331,8 +332,15 @@ db.query({"arrayField": [value1, value2]})
 db.query({arrayField: { "$all": [value1, value2]} })
 ```
 
+Try the problem below: <br>
+<br>
+<strong>How many documents contain the value `crimson`? How many have exactly `crimson` and `kiwi`? </strong> (ex.2)
+<!-- db.nobel.distinct("new_array").length, db.nobel.distinct("new_array") -->
 
-<strong>Part 2 - At Least One </strong>:
+
+
+<br>
+<br><strong>Part 2 - At Least One </strong>:
 <br>To specify equality condition on an array, use the following format.
 ```js
 db.query({"arrayField": [value1, value2]})
