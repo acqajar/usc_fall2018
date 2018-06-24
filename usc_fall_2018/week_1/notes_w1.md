@@ -429,6 +429,7 @@ That being said, how would you construct a query to include all documents with a
 >* [Query Embedded document](https://docs.mongodb.com/manual/tutorial/query-embedded-documents/)
 >* More on [Embedded documents vs separate collections](http://openmymind.net/Multiple-Collections-Versus-Embedded-Documents/#1)
 >* Tons of resources here: [Embed vs Ref](https://coderwall.com/p/px3c7g/mongodb-schema-design-embedded-vs-references), [Tips and Tricks](https://www.safaribooksonline.com/library/view/50-tips-and/9781449306779/ch01.html#tip_5), [MongoDB Schema Design Series Pt.1](https://www.mongodb.com/blog/post/6-rules-of-thumb-for-mongodb-schema-design-part-1)
+>* More on querying Arrays [here](https://docs.mongodb.com/v3.2/reference/operator/query-array/)
 
 
 
