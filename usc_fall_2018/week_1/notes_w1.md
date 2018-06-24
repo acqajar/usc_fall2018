@@ -185,6 +185,9 @@ Given you now have all the tools necessary to construct this query, how would yo
 >`Note: `<br>
 Using `laureates` database for these problems. Please switch databases.
 
+---
+<br>
+
 <a id="embedded"></a>
 ### SECTION 1: Query Embedded Document & Array
 
@@ -391,6 +394,21 @@ What results are returned ? Are they different that the ones you expected?
 
 Try it with other comparison operators [(see above)](#comparison). 
 
+Last but not least is the `$size` operator. This is used to query based on array sizes.
+
+```js
+db.query( { field: { `$size`: number_value} })
+```
+
+`Note` - $size operator DOES NOT accept range operators. Can you explain what this means?
+
+<strong>Challenge </strong><br>
+That being said, how would you construct a query to include all documents with array sizes no larger than 2?
+
+<!-- db.nobel.find( {$or: [{ new_score_array: { $size: 0} }, { new_score_array: { $size: 1} }, { new_score_array: { $size: 2} } ]} ).count() -->
+
+---
+<br> 
 
 <a id="geo"></a>
 ### SECTION 2: Geospatial Search
