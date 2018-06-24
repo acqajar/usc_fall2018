@@ -527,12 +527,23 @@ Find all the cities near the coordinates -72.622739, 42.070206. Execute it. Then
 ## Step 4: Query Optimization<br>
 
 #### Concepts:
-* Execution stats
+* [Execution stats](#stats)
 * [Complex Indexes](https://docs.mongodb.com/manual/reference/method/db.collection.createIndex/) - multiple indexes, order
-* [Latency](https://docs.mongodb.com/manual/reference/method/db.collection.latencyStats/)
+* [Other topics](#other) 
 
 
-#### Unit Questions:
-* Questions 
-#### Tips:
-* Tips for population
+<a id="stats"></a>
+
+### SECTION 1: Execution Stats
+
+
+
+<a id="index"></a>
+
+### SECTION 2: Indexes
+
+
+<a id="other"></a>
+
+### SECTION 3: Otherz
+[Latency](https://docs.mongodb.com/manual/reference/method/db.collection.latencyStats/)
