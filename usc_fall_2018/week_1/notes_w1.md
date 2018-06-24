@@ -529,7 +529,7 @@ Find all the cities near the coordinates -72.622739, 42.070206. Execute it. Then
 #### Concepts:
 * [Execution stats](#stats)
 * [Complex Indexes](https://docs.mongodb.com/manual/reference/method/db.collection.createIndex/) - multiple indexes, order
-* [Other topics](#other) 
+<!-- * [Other topics](#other)  -->
 
 
 <a id="stats"></a>
@@ -573,10 +573,25 @@ Without too much explanation, lets <strong>WOW and SURPRISE</strong> you by just
 
  Pretty amazing right? Just like that we have improved our query `performance 26x`! What is going on here?
 
+<strong> Why </strong><br>
+Lets rewind a bit and describe what is going on without an index. In short, without the index, the execution of any query does a collection scans i.e. scans every document in the collection and returns those that match the query conditions/statement. Thus, without an index, queries are inefficient and lack the performance large scale systems need to scale.    
 
+But what precisely is an index? Well, in short it's a data structure. The structure that is used to store a database index is called a `B-tree`. As the name implies,it organizes the collection in a tree like fashion. See below.
 
+![object](../img/tree.png)
+
+Without diving to deep into data structures, the crux of indexing is that for each pile in the tree, it is very easy and quick to do a comparison with the value you are finding and branch on to the next pile.  Each pile drastically reduces the number of items you need to scan;actually exponentially so.
+
+Other than making our queries more computationally efficient, here are some more useful commands to understand our indexes.
+
+* `db.collection.getIndexes()` to get a list of current indexes
+* `db.collection.dropIndex()` by passing in the name of the index you want to remove
+* `db.collection.dropIndexes()` to remove all indexes
+* `db.runCommand({ dbStats: 1})` displays a set of database stats, and specifically with regards to indexes, shows you the number of indexes you have and your index size
+* Indexes can be assorted by ascending or descending depending on whether or not the value you pass into your index is `1` or `-1` respectively
+<!-- 
 
 <a id="other"></a>
 
 ### SECTION 3: Other Topics
-[Latency](https://docs.mongodb.com/manual/reference/method/db.collection.latencyStats/)
+[Latency](https://docs.mongodb.com/manual/reference/method/db.collection.latencyStats/) -->
