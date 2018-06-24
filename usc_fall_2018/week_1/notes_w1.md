@@ -504,15 +504,18 @@ Find all the cities near the coordinates -72.622739, 42.070206. Execute it. Then
 <!-- db.runCommand(    {      geoNear: "cities",      near: {coordinates: [ -72.622739, 42.070206 ] },      spherical: true, limit: 10} ) -->
 
 ### See Below for more reading:
->#### <strong>`Tips`</strong>:
->#### <strong>`References/Read More`</strong>:
+
+><strong>`References/Read More`</strong>: 
 >* [Query Array](https://docs.mongodb.com/manual/tutorial/query-arrays/)
 >* [Query Embedded document](https://docs.mongodb.com/manual/tutorial/query-embedded-documents/)
 >* More on [Embedded documents vs separate collections](http://openmymind.net/Multiple-Collections-Versus-Embedded-Documents/#1)
 >* Tons of resources here: [Embed vs Ref](https://coderwall.com/p/px3c7g/mongodb-schema-design-embedded-vs-references), [Tips and Tricks](https://www.safaribooksonline.com/library/view/50-tips-and/9781449306779/ch01.html#tip_5), [MongoDB Schema Design Series Pt.1](https://www.mongodb.com/blog/post/6-rules-of-thumb-for-mongodb-schema-design-part-1)
 >* More on querying Arrays [here](https://docs.mongodb.com/v3.2/reference/operator/query-array/)
 >* More on advanced topics on geospatial queries and polygon arrays [here](https://docs.mongodb.com/manual/reference/geojson/#geojson-polygon)
->* For more on Geospatial queries, see [here](https://docs.mongodb.com/manual/geospatial-queries/) and for more on `$geoNear`, click [here](https://docs.mongodb.com/manual/reference/command/geoNear/)
+>* For more on Geospatial queries, see [here](https://docs.mongodb.com/manual/reference/operator/query-geospatial/index.html) and [here](https://docs.mongodb.com/manual/geospatial-queries/) and for more on `$geoNear`, click [here](https://docs.mongodb.com/manual/reference/command/geoNear/)
+>* For more on logical operators such as `$or`, see [here](https://docs.mongodb.com/manual/reference/operator/query-logical/)
+>* For more on evaluation queries such as the `$text` operator, see [here](https://docs.mongodb.com/manual/reference/operator/query-evaluation/)
+
 
 <br>
 
