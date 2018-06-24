@@ -455,6 +455,12 @@ What is the difference in documents returned between text `containing radiation`
  db.nobel.find(    { $text: { $search: "radiation" } },    { score: { $meta: "textScore" } } ).sort( { score: { $meta: "textScore" } } ).count()
  -->
 
+Also, it is important to note that match operation of the $text operator has several unique conditions.
+* Stop words are ignored such as his, her, by, the, a, and, etc. If you want to see the full list, see [here](https://github.com/Yoast/YoastSEO.js/blob/develop/src/config/stopwords.js) or [here](https://www.ranks.nl/stopwords) for stop words in other languages.
+* Unless specified otherwise, the $text operator matches on the complete `stemmed word`. To see more on stemmed words, click [here](https://en.wikipedia.org/wiki/Stemming).
+
+For more on the `$text` operator and all its functionality, see [MongoDB docs](https://docs.mongodb.com/manual/reference/operator/query/text/).
+
 
 <a id="geo"></a>
 ### SECTION 3: Geospatial Search
