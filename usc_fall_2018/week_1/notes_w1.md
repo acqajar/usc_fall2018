@@ -179,8 +179,9 @@ Given you now have all the tools necessary to construct this query, how would yo
     * [What is an Embedded Document](#s1p1) 
     * [Querying Embedded Documents](#s1p2)
     * [Querying Arrays](#s1p3)
-* [Geospatial Search](#geo)
 * [Text Search](#texts)
+* [Geospatial Search](#geo)
+
 
 >`Note: `<br>
 Using `laureates` database for these problems. Please switch databases.
@@ -407,19 +408,58 @@ That being said, how would you construct a query to include all documents with a
 
 <!-- db.nobel.find( {$or: [{ new_score_array: { $size: 0} }, { new_score_array: { $size: 1} }, { new_score_array: { $size: 2} } ]} ).count() -->
 
----
 <br> 
 
-<a id="geo"></a>
-### SECTION 2: Geospatial Search
-
-<br>
 
 <a id="texts"></a>
-### SECTION 3: Text Search
-
-
+### SECTION 2: Text Search
 <br>
+One of the powerful features in MongoDB is the ability to do a text search through any field that you have indexed whose value is a text field. Lets have a closer look at what this entails.
+
+In the `nobel` collection, the `prizes.motivation` field tends to be a text field describing the motivation behind each awarded nobel prize. This seems like a good candidate to have a text search on. This is a two step process:
+1. Create and index on the field you want to search
+2. Run query on said field
+
+To create an index (more on this in [Step 4](#step4)), use the following syntax:<br>
+```js
+db.stores.`createIndex`( { field_name: value, field_name: value } )
+```
+
+How would you accomplish this for our collection?
+<!-- db.nobel.createIndex( { "prizes.motivation": "text" } ) -->
+
+Now that you have created an index, specifying the field to search, the syntax for a text seach is as follows:<br>
+```js
+db.nobel.find({"$text": {"$search": "text_to_search" }})
+```
+
+How would you answer the following?<br>
+><strong>How many documents contain the word `radiation`? How many contain the words `radiation, isolation and radiation`?</strong>  
+
+The `$text` operator is a powerful tool, and can be used with many modifications.  
+
+In addition, as part of the `$text` operator, we can also reveal how well the document matched with the search term/terms. This score is given to all the documents and can be sorted by this score as well to retrieve the most relevant documents. 
+
+Here's an example of its implementation:
+```js
+ db.nobel.find(    { $text: { $search: "search_terms" } },    { score: { $meta: "textScore" } } ).sort( { score: { $meta: "textScore" } } )
+ ```
+
+ This will sort the documents  by their `textScore`, which is a measure of how relevant the specified text indexed is to the search terms you queried on. 
+
+ The `$text` operator can also `exclude` documents that contain a certain term. To accomplish this, the syntax is  " `-search_term`". If it helps, think of it as negating or "minus" this search_term. 
+
+><strong>Challenge </strong> <br>
+What is the difference in documents returned between text `containing radiation` and those containing radiation `but not cosmic`?
+<!-- db.nobel.find(    { $text: { $search: "radiation -cosmic" } },    { score: { $meta: "textScore" } } ).sort( { score: { $meta: "textScore" } } ).count()
+ db.nobel.find(    { $text: { $search: "radiation" } },    { score: { $meta: "textScore" } } ).sort( { score: { $meta: "textScore" } } ).count()
+ -->
+
+
+<a id="geo"></a>
+### SECTION 3: Geospatial Search
+
+
 <br>
 
 ### See Below for more reading:
@@ -434,6 +474,7 @@ That being said, how would you construct a query to include all documents with a
 
 
 <a id="optimize"></a>
+<a id="step4"></a>
 
 # Step 4: Query Optimization<br>
 
