@@ -148,7 +148,7 @@ To address this phrase above, we will need to incoporate some comparison operato
 <a id="compare"></a>
 
 #### --- Comparison Operators ---
-
+<a id="comparison"></a>
 ![aggregation pipeline](../img/comparison.png)
 
 Now that you have this list, the real question is, given this list, which comparison operator would you use to construct this query?
@@ -377,6 +377,19 @@ How would you solve this? Remember to use the or operator to include both condit
 <br>
 4 - <strong> Advanced Array Querying </strong>
 
+Here, we will try and combine some of the earlier concepts with some comparison queries to build more complex queries. 
+
+In the last section, you identified all the different attributes of a document in the `nobel` collection. In this part 4 of querying arrays, we will examine more closely how to construct queries built on top of some comparison operators.
+
+To match on multiple criteria, use `$elemMatch` operator. Here's an example implementation:
+<br>
+```js
+db.nobel.find( { new_score_array: { "$elemMatch": { $gt: 1, $lt: 10 } } } )
+```
+
+What results are returned ? Are they different that the ones you expected?
+
+Try it with other comparison operators [(see above)](#comparison). 
 
 
 <a id="geo"></a>
