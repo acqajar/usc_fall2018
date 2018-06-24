@@ -469,12 +469,39 @@ For this section we will switch to our `country` collection to conduct `geospati
 
 Geospatial queries are an interesting type of native query for MongoDB. To create a geospatial index there are 3 key factors:
 1. Need a field that holds a location, stored as an array, with an `x` and `y` value.
-2. Need to created an index on the relevant field with `$ensureIndex`.
+2. Need to create an index on the relevant field with `$createIndex`.
 3. To execute the query, use the `$near` operator.
 
 
+How would you create an index and around what field value?
+<!-- db.cities.createIndex( { "loc": "2dsphere" } )  -->
 
+After creating an index, it's time to use the `$near` operator. The syntax of the `$near` operator also includes min and max distance properties, `$minDistance` and `$maxDistance` respectively. See the syntax below:
+```js
+// Required syntax below to execute a geospatial query
+ db.collection.find({ loc: {`$near`: { $geometry: {type: "Point", coordinates: [ x, y]}, `$minDistance`: min_distance, `$maxDistance`:max_distance }  }  })
+ ```
+
+><strong>Challenge</strong><br>
+Return the number of cities near coordinates [-72.622739, 42.070206] with a min distance of 0 and max distance of 10000.
+<!-- db.cities.find({ loc: {$near: { $geometry: {coordinates: [ -72.622739, 42.070206]}, $minDistance: 100, $maxDistance:10000 }  }  }) -->
+
+Another facet of the geospatial index is the `$geoNear` command. `$geoNear` sorts documents in terms of distance (in meters) from nearest to farthest to a specified point, assuming a 2d sphere i.e. earth-like sphere. Similar to the last query, you can set a min and max distance. Quite different from the last query, `$geoNear` returns the actual distance from a specified point in meters. In addition, $geoNear returns stats on your query, the most important being:
+* Average distance and Max distance of documents returned
+* Time in miliseconds the query took
 <br>
+<br>
+
+The implementation for `$geoNear` is as follows:
+```js
+// Required syntax below to execute a geospatial query
+ db.runCommand( { `geoNear`: collection_name, `near`: {coordinates: [x, y ] }, spherical: boolean, limit: option, query: option, minDistance: min, maxDistance: max...} )
+ ```
+Now lets try a problem using the $geoNear command.
+
+><strong>Challenge</strong><br>
+Find all the cities near the coordinates -72.622739, 42.070206. Execute it. Then execute it by limiting the number of documents using the following limits: 30, 20, 10. Do you notice anything interesting?
+<!-- db.runCommand(    {      geoNear: "cities",      near: {coordinates: [ -72.622739, 42.070206 ] },      spherical: true, limit: 10} ) -->
 
 ### See Below for more reading:
 >#### <strong>`Tips`</strong>:
@@ -484,13 +511,17 @@ Geospatial queries are an interesting type of native query for MongoDB. To creat
 >* More on [Embedded documents vs separate collections](http://openmymind.net/Multiple-Collections-Versus-Embedded-Documents/#1)
 >* Tons of resources here: [Embed vs Ref](https://coderwall.com/p/px3c7g/mongodb-schema-design-embedded-vs-references), [Tips and Tricks](https://www.safaribooksonline.com/library/view/50-tips-and/9781449306779/ch01.html#tip_5), [MongoDB Schema Design Series Pt.1](https://www.mongodb.com/blog/post/6-rules-of-thumb-for-mongodb-schema-design-part-1)
 >* More on querying Arrays [here](https://docs.mongodb.com/v3.2/reference/operator/query-array/)
+>* More on advanced topics on geospatial queries and polygon arrays [here](https://docs.mongodb.com/manual/reference/geojson/#geojson-polygon)
+>* For more on Geospatial queries, see [here](https://docs.mongodb.com/manual/geospatial-queries/) and for more on `$geoNear`, click [here](https://docs.mongodb.com/manual/reference/command/geoNear/)
 
+<br>
 
-
+---
+<br>
 <a id="optimize"></a>
 <a id="step4"></a>
 
-# Step 4: Query Optimization<br>
+## Step 4: Query Optimization<br>
 
 #### Concepts:
 * Execution stats
