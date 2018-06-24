@@ -465,6 +465,14 @@ For more on the `$text` operator and all its functionality, see [MongoDB docs](h
 <a id="geo"></a>
 ### SECTION 3: Geospatial Search
 
+For this section we will switch to our `country` collection to conduct `geospatial` queries.
+
+Geospatial queries are an interesting type of native query for MongoDB. To create a geospatial index there are 3 key factors:
+1. Need a field that holds a location, stored as an array, with an `x` and `y` value.
+2. Need to created an index on the relevant field with `$ensureIndex`.
+3. To execute the query, use the `$near` operator.
+
+
 
 <br>
 
