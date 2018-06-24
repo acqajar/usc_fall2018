@@ -536,14 +536,47 @@ Find all the cities near the coordinates -72.622739, 42.070206. Execute it. Then
 
 ### SECTION 1: Execution Stats
 
+Now that we can write a few queries, lets try and unveil the deeper level stats behind these operations. Up until now, we have been writing queries in the blind!
 
+To analyze/evaluate our query performance, we can use the `.execute("executionStats")`. Lets use it on our cities collection which has roughly 29k documents to discover some interesting stats about this collection.
+
+<strong>Run the following: </strong>
+```js
+ db.cities.find({"city":"AGAWAM"}).explain("executionStats")
+ ```
+What do you notice? Specifically, looking at the `"executionStats"` section, anything interesting? 
+
+The most glaring observation should be the difference between the number of documents examined (29353) and the number returned (1). Last but not least, we can see that this difference is demonstrated in the amount of time it took to return the results. We will discuss how to improve this in the next section :).
+
+In addition, execute the following command:
+```js
+ db.cities.find({"state":"MA"}).explain("executionStats")
+ ```
+
+ What do you notice here? Is it better or worse in terms of the KPIs we looked at last?
 
 <a id="index"></a>
 
 ### SECTION 2: Indexes
 
+Without too much explanation, lets <strong>WOW and SURPRISE</strong> you by just executing the following command
+```js
+ db.cities.createIndex({ state:1 })
+ ```
+
+ And now, lets execute the last command we had on state
+ ```js
+ db.cities.find({"state":"MA"}).explain("executionStats")
+ ```
+
+ What do you notice with regards to the KPIs for the execution stats of this query now?
+
+ Pretty amazing right? Just like that we have improved our query `performance 26x`! What is going on here?
+
+
+
 
 <a id="other"></a>
 
-### SECTION 3: Otherz
+### SECTION 3: Other Topics
 [Latency](https://docs.mongodb.com/manual/reference/method/db.collection.latencyStats/)
