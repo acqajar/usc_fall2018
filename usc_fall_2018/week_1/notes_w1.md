@@ -285,15 +285,15 @@ Now that you have the basics of how to query an embedded document and some udner
 
 
 
-<a id="s1p2"></a>
+<a id="s1p3"></a>
 ### Part 3 - Querying Arrays
 
 Now, with the `laureates` database, we will query arrays. If you are coming from a SQL/relational backgorund, this might seem unnatural, but lets try a few out. 
 <br>
 <br>
-Before we begin, lets do a bit of discovery. 
+Before we begin, lets do a bit of discovery on our collection. 
 
-1 - <strong>How Many fields are there? Return a list of only the fields (not their values). </strong> 
+<strong>How Many fields are there? Return a list of only the fields (not their values). </strong> (ex.1)
 <br/> `Key` thing to remember here is that everything in MongoDB is a document, which is just an object. What's an object? Well, for simplicity, an object is just a container for properties which are just name - value pairs. In our `nobel` database, for example the `names` are on the left, and `values` on the right. See below:
 
 ![object](../img/object.png)
@@ -311,13 +311,13 @@ With this, can you return only the keys of a single document? There are several 
 <br>
 
 
-2 - <strong>How Many distinct fields are there for the array field? What are they? </strong> (ex.2)
+<strong>How Many distinct fields are there for the array field? What are they? </strong> (ex.2)
 <!-- db.nobel.distinct("new_array").length, db.nobel.distinct("new_array") -->
 Using distinct, how would you return all the unique values for the array field? Which is the field that has an array of values?
 
 <br>
 
-3 - <strong> Querying Arrays </strong>
+<strong>Types of Array Querying </strong>
 <br> Now with better understanding of the collections and arrays, lets have a look at how to query array fields.
 
 In MongoDB, some use cases might include fields such as tags, years, colors, etc. Can you think of some?
@@ -325,7 +325,7 @@ In MongoDB, some use cases might include fields such as tags, years, colors, etc
 Several formats of querying an array: equality condition, at least one, and multiple criteria condition
 
 
-<strong>Part 1 - Equality </strong>:
+<strong>Equality </strong>:
 <br>There are two types of equality conditions. One where order is maintained and one where it is not. See below.
 
 ```js
@@ -349,7 +349,8 @@ db.nobel.find( { "new_array": ["crimson","kiwi"] } )
 What differences do you notice? 
 
 
-<br><strong>Part 2 - At Least One </strong>:
+<br>
+<strong> At Least One </strong>:
 <br>To specify having only one of the values in the array, use the following format:
 ```js
 db.query({"arrayField": value1 })
@@ -379,7 +380,7 @@ db.nobel.find( { "new_array":{$in: ["indigo","crimson"] }} ).count() -->
 How would you solve this? Remember to use the or operator to include both conditions in your total count.
 
 <br>
-4 - <strong> Advanced Array Querying </strong>
+<strong> Advanced Array Querying </strong>
 
 Here, we will try and combine some of the earlier concepts with some comparison queries to build more complex queries. 
 
