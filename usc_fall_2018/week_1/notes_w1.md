@@ -16,7 +16,7 @@
 
 `Note:`
 
->For today's lesson, we will be using a web version of MongoDB which you can find [here](https://www.tutorialspoint.com/mongodb_terminal_online.php). For future classes, you will should have MongoDB (and other NoSQL db we will use) already installed. Thank you :).
+>For today's lesson, we will be using a web version of MongoDB which you can find [here](http://www.studyterminal.in/courses.php). For future classes, you will should have MongoDB (and other NoSQL db we will use) already installed. Thank you :).
 <!-- https://docs.mongodb.com/manual/tutorial/analyze-query-plan/ -->
 <br><br>
 <a id="upload"></a>
@@ -28,7 +28,7 @@
 * Navigating Mongo shell
 
 
-First, in case you didn't, navigate to this link [here](https://www.tutorialspoint.com/mongodb_terminal_online.php). Here, we want to upload two different file types. The two files to upload are in the `data` folder which is inside the `week_1` folder. 
+First, in case you didn't, navigate to this link [here](http://www.studyterminal.in/courses.php). Here, we want to upload two different file types. The two files to upload are in the `data` folder which is inside the `week_1` folder. 
 1. Upload those files to the online MongoDB instance by clicking on the left hand sidebar then right clicking on "root" folder and selecting upload.
 2. Once uploaded, we now have to import those file types into MongoDB. To import these files we will use <strong> mongoimport </strong>.
 > <strong> `Key Takeaway` </strong>
