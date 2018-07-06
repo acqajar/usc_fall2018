@@ -273,9 +273,9 @@ db.listings.aggregate([
 
 
 // results
-{ "price" : 20, "title" : "ENTREPRENEURSHIP CLUB SILICON VALLEY TRIP OFFICIAL SIGN UP", "profitability" : 280, "AdiffD" : 14 }
-{ "price" : 20, "title" : "Entrepreneurship Club Silicon Valley Trip", "profitability" : 100, "AdiffD" : 5 }
-{ "price" : 20, "title" : "Startup Series:  \"Fundraising\"", "profitability" : 100, "AdiffD" : 5 }
+{ "price" : 20, "title" : "ENTREPRENEURSHIP CLUB SILICON VALLEY TRIP OFFICIAL SIGN UP", "profitability" : 280}
+{ "price" : 20, "title" : "Entrepreneurship Club Silicon Valley Trip", "profitability" : 100, }
+{ "price" : 20, "title" : "Startup Series:  \"Fundraising\"", "profitability" : 100}
 
 ```
 
