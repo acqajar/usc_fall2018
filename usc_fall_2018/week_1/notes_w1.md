@@ -367,6 +367,13 @@ db.query({"$or": [{field:value}, {field:value}, ... ]})
 
 db.query( {field: {"$in": ["value1","value2",...] }})
 
+
+
+
+db.query( {$and: [ { <expression1> }, { <expression2> } , ... , { <expressionN> } ] })
+
+
+
 ```
 
 In addition, another way of writing attempting solve this question is by using the `$in` operator. The implementation is as follows:
