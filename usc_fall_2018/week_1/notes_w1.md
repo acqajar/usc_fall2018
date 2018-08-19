@@ -364,12 +364,15 @@ For the second question, you have to use the `$or` operator to combine the both 
 <br>
 ```js
 db.query({"$or": [{field:value}, {field:value}, ... ]})
+
+db.query( {field: {"$in": ["value1","value2",...] }})
+
 ```
 
 In addition, another way of writing attempting solve this question is by using the `$in` operator. The implementation is as follows:
 <br>
 ```js
-db.query.find( { field: {"$in": ["value1","value2",...] }} )
+db.query( { field: {"$in": ["value1","value2",...] }} )
 ```
 
 The `$in` operator like the `$or` operator checks for either of the values. In general, the two will be substitutes for one another.  
