@@ -1,0 +1,6 @@
+Run this command after running dataset file:
+
+Creates KNOWs relationship between co-actors:
+
+MATCH (p1:Person)-[:ACTED_IN]->()<-[:ACTED_IN]-(p2:Person)
+MERGE (p1)-[:KNOWS]-(p2)

@@ -1,8 +1,8 @@
 # Mongodb Basics 
 
 ### Overview:
-* [What is Spark ?](#what)
-* [Using Spark](#spark)
+* [What is Graph ?](#what)
+* [Using Neo4j (GraphDB)](#spark)
    
 
 `Note:`
@@ -11,4 +11,5 @@
 <!-- https://docs.mongodb.com/manual/tutorial/analyze-query-plan/ -->
 <br><br>
 <a id="what"></a>
-# Step 1: What is Spark ? <br>
+# Step 1: What is a Graph Database ? <br>
+

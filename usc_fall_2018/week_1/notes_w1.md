@@ -369,13 +369,15 @@ db.query({"$or": [{field:value}, {field:value}, ... ]})
 In addition, another way of writing attempting solve this question is by using the `$in` operator. The implementation is as follows:
 <br>
 ```js
-db.nobel.find( { field: {"$in": ["value1","value2",...] }} )
+db.query.find( { field: {"$in": ["value1","value2",...] }} )
 ```
 
 The `$in` operator like the `$or` operator checks for either of the values. In general, the two will be substitutes for one another.  
-<!-- db.nobel.find( { "new_array":"indigo" } ).count(),
+```js
+db.nobel.find( { "new_array":"indigo" } ).count(),
 db.nobel.find({$or: [{ "new_array":"indigo" }, {new_array:"crimson"}]} ).count(),
-db.nobel.find( { "new_array":{$in: ["indigo","crimson"] }} ).count() -->
+db.nobel.find( { "new_array":{$in: ["indigo","crimson"] }} ).count()
+```
 
 How would you solve this? Remember to use the or operator to include both conditions in your total count.
 
